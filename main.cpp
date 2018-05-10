@@ -8,18 +8,18 @@ int main()
 	Vector3D array[10000];
 
 	char* s = new char[5];
-	cin.getline(s, 5, ' '); //въвеждаме операцията
+	cin.getline(s, 5, ' '); //ГўГєГўГҐГ¦Г¤Г Г¬ГҐ Г®ГЇГҐГ°Г Г¶ГЁГїГІГ 
 
 	int n;
-	cin >> n; //въвеждаме броя вектори
+	cin >> n; //ГўГєГўГҐГ¦Г¤Г Г¬ГҐ ГЎГ°Г®Гї ГўГҐГЄГІГ®Г°ГЁ
 
 	for (int i = 0; i < n; i++)
 	{
-		cin >> array[i]; //въвеждаме векторите
+		cin >> array[i]; //ГўГєГўГҐГ¦Г¤Г Г¬ГҐ ГўГҐГЄГІГ®Г°ГЁГІГҐ
 	}
 
-	//започваме търсене на операцията и нейното изпълняване
-	if (strcmp(s, "+") == 0) //сбор
+	//Г§Г ГЇГ®Г·ГўГ Г¬ГҐ ГІГєГ°Г±ГҐГ­ГҐ Г­Г  Г®ГЇГҐГ°Г Г¶ГЁГїГІГ  ГЁ Г­ГҐГ©Г­Г®ГІГ® ГЁГ§ГЇГєГ«Г­ГїГўГ Г­ГҐ
+	if (strcmp(s, "+") == 0) //Г±ГЎГ®Г°
 	{
 		Vector3D v;
 		for (int i = 0; i < n; i++)
@@ -29,7 +29,7 @@ int main()
 		cout << v;
 
 	}
-	else if (strcmp(s, "-") == 0) //изваждане
+	else if (strcmp(s, "-") == 0) //ГЁГ§ГўГ Г¦Г¤Г Г­ГҐ
 	{
 		Vector3D v = v + array[0];
 		for (int i = 1; i < n; i++)
@@ -38,7 +38,7 @@ int main()
 		}
 		cout << v;
 	}
-	else if (strcmp(s, "NEG") == 0) //негиране
+	else if (strcmp(s, "NEG") == 0) //Г­ГҐГЈГЁГ°Г Г­ГҐ
 	{
 		for (int i = 0; i < n; i++)
 		{
@@ -46,13 +46,13 @@ int main()
 			if (i != n - 1) cout << " ";
 		}
 	}
-	else if (s[0] == '*') //умножение
+	else if (s[0] == '*') //ГіГ¬Г­Г®Г¦ГҐГ­ГЁГҐ
 	{
 		int number = 0;
 
 		for (int i = 1; i <= strlen(s) - 1; i++)
 		{
-			number = number + (s[i] - '0'); //конвертираме символ във число
+			number = number + (s[i] - '0'); //ГЄГ®Г­ГўГҐГ°ГІГЁГ°Г Г¬ГҐ Г±ГЁГ¬ГўГ®Г« ГўГєГў Г·ГЁГ±Г«Г®
 			if (i != strlen(s) - 1) number = number * 10;
 		}
 
@@ -62,13 +62,13 @@ int main()
 			if (i != n - 1) cout << " ";
 		}
 	}
-	else if (s[0] >= '1' && s[0] <= '9') //умножение
+	else if (s[0] >= '1' && s[0] <= '9') //ГіГ¬Г­Г®Г¦ГҐГ­ГЁГҐ
 	{
 		int number = 0;
 
 		for (int i = 0; i <= strlen(s) - 2; i++)
 		{
-			number = number + (s[i] - '0'); //конвертираме символ във число
+			number = number + (s[i] - '0'); //ГЄГ®Г­ГўГҐГ°ГІГЁГ°Г Г¬ГҐ Г±ГЁГ¬ГўГ®Г« ГўГєГў Г·ГЁГ±Г«Г®
 			if (i != strlen(s) - 2) number = number * 10;
 		}
 
@@ -78,6 +78,7 @@ int main()
 			if (i != n - 1) cout << " ";
 		}
 	}
+	delete s;
 
 	system("pause");
 	return 0;
